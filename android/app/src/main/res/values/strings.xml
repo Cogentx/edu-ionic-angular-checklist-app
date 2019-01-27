@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Checklists</string>
+    <string name="title_activity_main">Checklists</string>
+    <string name="package_name">com.cogentx.Checklists</string>
+    <string name="fileprovider_authority">com.cogentx.Checklists.fileprovider</string>
+    <string name="custom_url_scheme">com.cogentx.Checklists</string>
+</resources>

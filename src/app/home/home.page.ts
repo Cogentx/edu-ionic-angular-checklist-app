@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  addChecklist() {
+    console.log('addChecklist called');
+  }
+
+  renameChecklist(checklist) {}
+
+  removeChecklist(checklist) {}
+
 }

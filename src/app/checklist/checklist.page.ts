@@ -12,4 +12,11 @@ export class ChecklistPage implements OnInit {
   ngOnInit() {
   }
 
+  addItem() {}
+
+  toggleItem(item) {}
+
+  renameItem(item) {}
+
+  removeItem(item) {}
 }

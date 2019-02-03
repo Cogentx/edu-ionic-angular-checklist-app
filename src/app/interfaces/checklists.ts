@@ -1,3 +1,7 @@
+import { ChecklistItem } from '../interfaces/checklistItem';
+
 export interface Checklist {
-  name?: string;
+  id: string;
+  title: string;
+  items: ChecklistItem[];
 }

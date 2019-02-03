@@ -9,4 +9,5 @@ https://www.joshmorony.com/
 ## Quick Lists 
 
 ### Lesson 3: Basic Layout
+### Lesson 4: Checklist Service 
 

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AlertController, IonList } from '@ionic/angular';
+import { ChecklistDataService } from '../services/checklist-data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +9,72 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  addChecklist() {
-    console.log('addChecklist called');
+  @ViewChild(IonList) slidingList: IonList;
+
+  constructor(public dataService: ChecklistDataService, private alertCtrl: AlertController) {
+
   }
 
-  renameChecklist(checklist) {}
+  addChecklist(): void {
+    this.alertCtrl.create({
+      header: 'New Checklist',
+      message: 'Enter the name of your new checklist below',
+      inputs: [
+        {
+          type: 'text',
+          name: 'name'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: (data) => {
+            this.dataService.createChecklist(data);
+          }
+        },
+      ],
 
-  removeChecklist(checklist) {}
+    }).then((prompt) => {
+      prompt.present();
+    });
+  }
+
+  renameChecklist(checklist): void {
+    this.alertCtrl.create({
+      header: 'Rename Checklist',
+      message: 'Enter the name of this checklist below',
+      inputs: [
+        {
+          type: 'text',
+          name: 'name'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: (data) => {
+            this.dataService.renameChecklist(checklist, data);
+          }
+        },
+      ],
+
+    }).then((prompt) => {
+      prompt.present();
+    });
+
+  }
+
+  removeChecklist(checklist): void {
+    this.slidingList.closeSlidingItems()
+      .then(() => {
+        this.dataService.removeChecklist(checklist);
+      });
+  }
 
 }

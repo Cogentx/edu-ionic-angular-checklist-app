@@ -1,13 +1,12 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>CHECKLIST TITLE</ion-title>
+  <ion-toolbar color="success">
+    <ion-title>{{checklist?.title}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/checklists"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="addItem()">
         <ion-icon slot="icon-only" name="add-circle"></ion-icon>
-        Click me
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -15,16 +14,16 @@
 
 <ion-content>
   <ion-list lines="none">
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let item of checklist?.items">
 
       <ion-item> 
-        <ion-label>ITEM TITLE</ion-label>
+        <ion-label>{{item.title}}</ion-label>
         <ion-checkbox [checked]="item.checked" (ionChange)="toggleItem(item)"></ion-checkbox>
       </ion-item>
 
       <ion-item-options side="end">
 
-        <ion-item-option color="light" expandable (click)="renameItem(item)">
+        <ion-item-option coaddd`lor="light" expandable (click)="renameItem(item)">
           <ion-icon slot="icon-only" name="clipboard"></ion-icon>
         </ion-item-option>
         

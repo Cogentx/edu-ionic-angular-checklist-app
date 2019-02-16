@@ -12,4 +12,5 @@ https://www.joshmorony.com/
 ### Lesson 4: Checklist Service
 ### Lesson 5: Checklists-ChecklistItems
 ### Lesson 6: Saving and Loading Data
+### Lesson 7: Intro Slider and Theming
 

@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { AlertController, IonList } from '@ionic/angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { AlertController, IonList, NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 import { ChecklistDataService } from '../services/checklist-data.service';
 
 @Component({
@@ -7,15 +8,28 @@ import { ChecklistDataService } from '../services/checklist-data.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   @ViewChild(IonList) slidingList: IonList;
 
-  constructor(public dataService: ChecklistDataService, private alertCtrl: AlertController) {
+  constructor(
+    public dataService: ChecklistDataService,
+    private alertCtrl: AlertController,
+    private navCtrl: NavController,
+    private storage: Storage,
+    ) {
+    }
 
-  }
+    ngOnInit(): void {
+      this.storage.get('introShown').then((result) => {
+        if (result == null) {
+          this.storage.set('introShown', true);
+          this.navCtrl.navigateRoot('/intro');
+        }
+      });
+    }
 
-  addChecklist(): void {
+    addChecklist(): void {
     this.alertCtrl.create({
       header: 'New Checklist',
       message: 'Enter the name of your new checklist below',

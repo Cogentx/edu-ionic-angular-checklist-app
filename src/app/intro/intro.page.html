@@ -4,6 +4,35 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide>
+      <img src="../../assets/images/slide1.png" alt="intro-slides">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/slide2.png" alt="intro-slides">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/images/slide3.png" alt="intro-slides">
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button color="light"
+              routerLink="/"
+              routerDirection="forward"
+              style="margin-top:20px;">
+              Start using QuickLists
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <img src="../../assets/images/slide4.png">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

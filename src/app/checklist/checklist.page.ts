@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AlertController, IonList} from '@ionic/angular';
 import { ChecklistDataService } from '../services/checklist-data.service';
 import { Checklist } from '../interfaces/checklists';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-checklist',
@@ -20,6 +21,7 @@ export class ChecklistPage implements OnInit {
     private alertCtrl: AlertController,
     private route: ActivatedRoute,
     private dataService: ChecklistDataService,
+    private storage: Storage,
 ) { }
 
   ngOnInit() {
@@ -35,6 +37,10 @@ export class ChecklistPage implements OnInit {
         this.checklist = this.dataService.getChecklist(this.slug);
       });
     }
+  }
+
+  resetChecklist() {
+    this.dataService.resetChecklist();
   }
 
   addItem(): void {

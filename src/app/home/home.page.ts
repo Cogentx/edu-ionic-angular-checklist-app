@@ -29,6 +29,10 @@ export class HomePage implements OnInit {
       });
     }
 
+    resetChecklist(): void {
+      this.dataService.resetChecklist();
+    }
+
     addChecklist(): void {
     this.alertCtrl.create({
       header: 'New Checklist',

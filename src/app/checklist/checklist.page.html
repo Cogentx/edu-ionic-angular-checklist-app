@@ -5,6 +5,9 @@
       <ion-back-button defaultHref="/checklists"></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
+      <ion-button (click)="resetChecklist()">
+        <ion-icon slot="icon-only" name="refresh-circle"></ion-icon>
+      </ion-button>
       <ion-button (click)="addItem()">
         <ion-icon slot="icon-only" name="add-circle"></ion-icon>
       </ion-button>

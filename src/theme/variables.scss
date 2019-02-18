@@ -1,6 +1,15 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+ion-content {
+  --ion-background-color: #32db64;
+  
+  ion-item-sliding {
+    --ion-background-color: #fff;
+  }
+}
+
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/

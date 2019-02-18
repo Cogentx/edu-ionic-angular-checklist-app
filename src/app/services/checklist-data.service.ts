@@ -31,6 +31,10 @@ export class ChecklistDataService {
     this.storage.set('checklists', this.checklists);
   }
 
+  resetChecklist(): void {
+    this.storage.clear();
+  }
+
   createChecklist(data): void {
     this.checklists.push({
       id: this.generateSlug(data.name),
@@ -108,6 +112,5 @@ export class ChecklistDataService {
 
     return slug;
   }
-
 
 }
